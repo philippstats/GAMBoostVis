@@ -1,0 +1,9 @@
+Package: GAMBoostVis
+Title: Contains plot functions for package GAMBoost
+Description: Contains different plot function I created for seminar thesis.
+Version: 0.01
+Depends: R (>= 3.1.2), GAMBoost, ggplot2, scales, gridExtra
+LazyData: true
+License: GPL-2
+Maintainer: Philipp J Roesch <philipp.stats@gmail.com>
+Author: Philipp J Roesch [aut, cre]
