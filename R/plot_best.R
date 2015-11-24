@@ -2,14 +2,14 @@
 #' 
 #' 
 #' @param object [\code{GAMBoost}]\cr including \code{y}
-#' @param title [\code{character(1)}]\cr Change title. Default "object: Best AIC at Iteration x"
-#' @importFrom gridExtra grid.arrange
+#' # @param title [\code{character(1)}]\cr Change title. Default "object: Best AIC at Iteration x"
+#' @importFrom cowplot plot_grid
 #' @author Philipp J Roesch
 #' @export
 #' 
 
-
-plot_best <- function(object, title = NULL) {
+plot_best <- function(object) {
+#plot_best <- function(object, title = NULL) {
   #Input checking
   if (class(object) != "GAMBoost") stop("<plot_best> only implemented for objects of class 'GAMBoost'")
   #Plot
@@ -19,10 +19,10 @@ plot_best <- function(object, title = NULL) {
   n_var <- n_smooth + n_lin 
   #white <- ceiling(n_var / 3) * 3 - n_var
  
-  if(is.null(title)) title <- paste0(deparse(substitute(object)), ": Best ", "AIC", " at Iteration ", 
-               best_step - 1)
-  plots <- lapply(1:n_smooth, function(x)  ploter(object, select = x, at.step = best_step, print = FALSE))
-  do.call(grid.arrange,  c(plots, main = title))
+  #if(is.null(title)) title <- paste0(deparse(substitute(object)), ": Best ", "AIC", " at Iteration ", 
+  #             best_step - 1)
+  plots <- lapply(1:n_smooth, function(x) ploter(object, select = x, at.step = best_step, print = FALSE))
+  do.call(plot_grid, plots)
 }
 
 

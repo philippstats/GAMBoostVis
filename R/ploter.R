@@ -14,8 +14,6 @@
 #' @import GAMBoost
 #' @importFrom splines spline.des
 #' @import ggplot2 
-#' @import scales
-#' @import gridExtra
 #' @export
  
  
@@ -55,7 +53,7 @@ ploter <- function(object, select=NULL,at.step=NULL, print = TRUE) {
     actual.expansion <- actual.expansion %*% rbind(diag(ncol(actual.expansion)-1),rep(-1,ncol(actual.expansion)-1))
     eta <- drop(actual.expansion %*% object$beta[[i+1]][at.step,])
     
-    bands <- GAMBoost:::calc.confidence.bands(object,i,at.step-1,phi = phi)
+    bands <- GAMBoost::calc.confidence.bands(object,i,at.step-1,phi = phi)
     
     p_data <- data.frame(actual.x = actual.x, eta = eta)
     b_data <- as.data.frame(bands)

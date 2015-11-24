@@ -14,8 +14,6 @@
 #' @import GAMBoost
 #' @importFrom splines spline.des
 #' @import ggplot2 
-#' @import scales
-#' @import gridExtra
 #' @export
  
  
