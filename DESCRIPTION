@@ -1,6 +1,6 @@
 Package: GAMBoostVis
 Title: Contains plot functions for package GAMBoost
-Description: Contains different plot function I created for seminar thesis.
+Description: Contains different plot functions I created for a seminar paper
 Version: 0.02
 Depends:
     R (>= 3.1.2),
